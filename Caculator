@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" href="cal_style.css">
+    </head>
+    <body>
+        <div class="cal">
+            <center><h1>Calculator</h1></center>
+            <input type="text" class="input" id="input" >
+            <center>
+            <div class="1">
+                <input type="submit" id="btn" onclick="docal(1)" value="1">
+                <input type="submit" id="btn" onclick="docal(2)" value="2">
+                <input type="submit" id="btn" onclick="docal('+')" value="+">
+            </div>
+            <div class="2">
+                <input type="submit" id="btn" onclick="docal(4)" value="4">
+                <input type="submit" id="btn" onclick="docal('*')" value="*">
+                <input type="submit" id="btn" onclick="docal('-')" value="-">
+            </div>
+            <div class="3">
+                <input type="submit" id="btn" onclick="docal(7)" value="7">
+                <input type="submit" id="btn" onclick="docal('/')" value="/">
+                <input type="submit" id="btn" onclick="docal('%')" value="%">
+            </div>
+            <div>
+                <input type="submit" id="btn" onclick="docal(0)" value="0">
+                <input type="submit" id="btn" onclick="docal(3)" value="3">
+                <input type="submit" id="btn" onclick="docal(5)" value="5">
+            </div>
+            <div>
+                <input type="submit" id="btn" onclick="docal(6)" value="6">
+                <input type="submit" id="btn" onclick="docal(8)" value="8">
+                <input type="submit" id="btn" onclick="docal(9)" value="9">
+            </div>
+            <input type="submit" id="c" onclick="c()" value="C">
+            <input type="submit" id="res" onclick="result()" value="=">
+            </center>
+
+            
+        </div>
+        <script>
+            const data=document.getElementById("input");
+            function docal(char)
+            {
+                data.value+=char;
+            }
+            function result()
+            {
+                try{
+                data.value=eval(data.value);
+                }
+                catch
+                {
+                    data.value="Math Error !";
+                }
+
+            }
+            function c()
+            {
+                data.value='';
+            }
+        </script>
+    </body>
+</html>
